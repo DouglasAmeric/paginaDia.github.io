@@ -8,19 +8,18 @@
 </head>
 <body>
     <header>
-        <h1>Bem-Vindo!</h1>
+        <h1>Bem-Vindo !</h1>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="/faq/">FAQ</a></li>
+                <li><a href="/sobre/">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="imagens">
-            <h2 id="msg">Hora do Dia:</h2>
+            <h2 id="msg">Fase do Dia: <span id="msg2"></span>  </h2>
             <p id="horaDia"></p>
             <div class="fts">
             </div>
@@ -50,20 +49,23 @@
             let p = document.getElementById('horaDia');
             let msg = document.querySelector('#msg');
             let img = document.querySelector('.fts');
+            let pMsg2 = document.getElementById('msg2');
 
             
             p.textContent =  `${hora}:${minuto}:${segundo}` ;
             
             if(hora >=6 && hora <12){
-                img.style.backgroundImage = 'url(/manha)';
+                img.style.backgroundImage = 'url(/dia)';
+                pMsg2.textContent = 'Manhã'
             }else if(hora >=13 && hora <18){
                 img.style.backgroundImage = 'url(/tarde)';
+                pMsg2.textContent = 'Tarde'
             }else{
                 img.style.backgroundImage = 'url(/noite)';
+                pMsg2.textContent = 'Noite'
             }
-
+            
         }
-        
         setInterval(imgDia, 100);
 
         imgDia();
