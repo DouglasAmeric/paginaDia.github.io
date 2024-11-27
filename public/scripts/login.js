@@ -4,7 +4,7 @@ function login(){
     let btn = document.getElementById('enter');
 
     if(usuario.trim() === 'admin' && senha.trim() === 'admin'){
-        window.location.href = '/home/';
+        window.location.href = '/home';
         window.alert('Acesso liberado');
     }else{
         
