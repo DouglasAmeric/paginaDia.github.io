@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="loginPG.css">
+    <link rel="stylesheet" href="/css/loginPG.css">
     <title>PG LOGIN</title>
+    <script defer src="/scripts/login.js"></script>
+
 </head>
 <body>
     <div class="card-login">
@@ -16,21 +18,5 @@
         <button type="submit" id="enter" onclick="login()">Login</button>
         <a href="reset.html" target="_blank">reset password?</a>
     </div>
-    <script>
-        function login(){
-            let usuario = document.getElementById('login').value;
-            let senha = document.getElementById('password').value;
-            let btn = document.getElementById('enter');
-
-            if(usuario.trim() === 'admin' && senha.trim() === 'admin'){
-                window.location.href = '/home/';
-                window.alert('Acesso liberado');
-            }else{
-                
-                window.alert('acesso negado');
-            }
-        }
-        
-    </script>
 </body>
 </html>
